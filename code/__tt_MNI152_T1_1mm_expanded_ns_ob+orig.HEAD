@@ -1,0 +1,135 @@
+
+type = string-attribute
+name = HISTORY_NOTE
+count = 501
+'[jacekdmochowski@Jaceks-MacBook-Pro-2.local: Wed Dec  6 14:54:09 2017] {AFNI_17.3.03:macosx_10.7_local} 3dSkullStrip -orig_vol -input ./__tt_MNI152_T1_1mm_expanded+orig -prefix ./__tt_MNI152_T1_1mm_expanded_ns\n[jacekdmochowski@Jaceks-MacBook-Pro-2.local: Wed Dec  6 14:54:11 2017] {AFNI_17.3.03:macosx_10.7_local} 3dWarp -verb -card2oblique /Users/jacekdmochowski/PROJECTS/NANCY/data/BRA_AL/anat.nii -prefix ./__tt_MNI152_T1_1mm_expanded_ns_ob -newgrid 1.000000 ./__tt_MNI152_T1_1mm_expanded_ns+orig~
+
+type  = float-attribute
+name  = WARPDRIVE_MATVEC_FOR_000000
+count = 12
+      0.9994497   -0.001270917     0.03314319       4.074615    0.003143369
+      0.9983814    -0.05679509      -7.142121    -0.03302099     0.05686059
+      0.9978357       2.102951
+
+type  = float-attribute
+name  = WARPDRIVE_MATVEC_INV_000000
+count = 12
+      0.9994498    0.003152707    -0.03301736      -3.980423   -0.001261136
+      0.9983808     0.05686801       7.016104     0.03314627    -0.05678732
+      0.9978359       -2.63904
+
+type = string-attribute
+name = TYPESTRING
+count = 15
+'3DIM_HEAD_ANAT~
+
+type = string-attribute
+name = IDCODE_STRING
+count = 27
+'AFN_k2Xcfp6iXUltENEsn8FLJw~
+
+type = string-attribute
+name = IDCODE_DATE
+count = 25
+'Wed Dec  6 14:54:10 2017~
+
+type = integer-attribute
+name = SCENE_DATA
+count = 8
+ 0 11 0 -999 -999
+ -999 -999 -999
+
+type = string-attribute
+name = LABEL_1
+count = 5
+'zyxt~
+
+type = string-attribute
+name = LABEL_2
+count = 5
+'zyxt~
+
+type = string-attribute
+name = DATASET_NAME
+count = 5
+'zyxt~
+
+type = integer-attribute
+name = ORIENT_SPECIFIC
+count = 3
+ 0 3 4
+
+type  = float-attribute
+name  = ORIGIN
+count = 3
+      -102.0706      -98.49385      -84.73919
+
+type  = float-attribute
+name  = DELTA
+count = 3
+              1              1              1
+
+type  = float-attribute
+name  = IJK_TO_DICOM
+count = 12
+              1              0              0      -102.0706              0
+              1              0      -98.49385              0              0
+              1      -84.73919
+
+type  = float-attribute
+name  = IJK_TO_DICOM_REAL
+count = 12
+              1              0              0      -102.0706              0
+              1              0      -98.49385              0              0
+              1      -84.73919
+
+type  = float-attribute
+name  = BRICK_STATS
+count = 2
+              0            255
+
+type = integer-attribute
+name = DATASET_RANK
+count = 8
+ 3 1 0 0 0
+ 0 0 0
+
+type = integer-attribute
+name = DATASET_DIMENSIONS
+count = 5
+ 209 246 323 0 0
+
+type = integer-attribute
+name = BRICK_TYPES
+count = 1
+ 1
+
+type  = float-attribute
+name  = BRICK_FLOAT_FACS
+count = 1
+              0
+
+type = string-attribute
+name = BRICK_LABS
+count = 3
+'#0~
+
+type = string-attribute
+name = BRICK_KEYWORDS
+count = 1
+'~
+
+type = string-attribute
+name = TEMPLATE_SPACE
+count = 5
+'ORIG~
+
+type = integer-attribute
+name = INT_CMAP
+count = 1
+ 0
+
+type = string-attribute
+name = BYTEORDER_STRING
+count = 10
+'LSB_FIRST~

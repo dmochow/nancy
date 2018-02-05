@@ -1,0 +1,121 @@
+
+type = string-attribute
+name = HISTORY_NOTE
+count = 574
+'[jacekdmochowski@Jaceks-MacBook-Pro-2.local: Wed Dec  6 14:54:11 2017] {AFNI_17.3.03:macosx_10.7_local} 3dcopy /Users/jacekdmochowski/PROJECTS/NANCY/data/BRA_AL/anat.nii ./__tt_anat+tlrc\n[jacekdmochowski@Jaceks-MacBook-Pro-2.local: Wed Dec  6 14:54:12 2017] {AFNI_17.3.03:macosx_10.7_local} 3dbucket -prefix ./__tt_anat_ts './__tt_anat+tlrc[0]'\n[jacekdmochowski@Jaceks-MacBook-Pro-2.local: Wed Dec  6 14:54:14 2017] {AFNI_17.3.03:macosx_10.7_local} 3dresample -master ./__tt_MNI152_T1_1mm_expanded_ns_ob+orig -prefix ./__tt_anat_ts_rs -inset ./__tt_anat_ts+tlrc -rmode Cu~
+
+type = string-attribute
+name = TYPESTRING
+count = 15
+'3DIM_HEAD_ANAT~
+
+type = string-attribute
+name = IDCODE_STRING
+count = 27
+'AFN_c_9RFH-4Yoxwd6RvAlKHxg~
+
+type = string-attribute
+name = IDCODE_DATE
+count = 25
+'Wed Dec  6 14:54:12 2017~
+
+type = integer-attribute
+name = SCENE_DATA
+count = 8
+ 0 11 0 -999 -999
+ -999 -999 -999
+
+type = string-attribute
+name = LABEL_1
+count = 5
+'zyxt~
+
+type = string-attribute
+name = LABEL_2
+count = 5
+'zyxt~
+
+type = string-attribute
+name = DATASET_NAME
+count = 5
+'zyxt~
+
+type = integer-attribute
+name = ORIENT_SPECIFIC
+count = 3
+ 0 3 4
+
+type  = float-attribute
+name  = ORIGIN
+count = 3
+      -102.0706      -98.49385      -84.73919
+
+type  = float-attribute
+name  = DELTA
+count = 3
+              1              1              1
+
+type  = float-attribute
+name  = IJK_TO_DICOM
+count = 12
+              1              0              0      -102.0706              0
+              1              0      -98.49385              0              0
+              1      -84.73919
+
+type  = float-attribute
+name  = IJK_TO_DICOM_REAL
+count = 12
+              1              0              0      -102.0706              0
+              1              0      -98.49385              0              0
+              1      -84.73919
+
+type  = float-attribute
+name  = BRICK_STATS
+count = 2
+           -168           3508
+
+type = integer-attribute
+name = DATASET_RANK
+count = 8
+ 3 1 0 0 0
+ 0 0 0
+
+type = integer-attribute
+name = DATASET_DIMENSIONS
+count = 5
+ 209 246 323 0 0
+
+type = integer-attribute
+name = BRICK_TYPES
+count = 1
+ 1
+
+type  = float-attribute
+name  = BRICK_FLOAT_FACS
+count = 1
+              0
+
+type = string-attribute
+name = BRICK_LABS
+count = 3
+'#0~
+
+type = string-attribute
+name = BRICK_KEYWORDS
+count = 1
+'~
+
+type = string-attribute
+name = TEMPLATE_SPACE
+count = 5
+'TLRC~
+
+type = integer-attribute
+name = INT_CMAP
+count = 1
+ 0
+
+type = string-attribute
+name = BYTEORDER_STRING
+count = 10
+'LSB_FIRST~
