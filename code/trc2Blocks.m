@@ -34,17 +34,17 @@ data = data{1}; % Going from struct to a 2-D array embedded within it.
 
 % Convert startTime to seconds
 % Put hours, minutes, seconds in an array
-temp = str2num(strrep(startTime,':',' ')); 
+timeArray = str2num(strrep(startTime,':',' ')); 
 % Convert hours, minutes, seconds to seconds
-startTimeInSeconds = temp(1)*3600 + temp(2)*60 + temp(3);
+startTimeInSeconds = timeArray(1)*3600 + timeArray(2)*60 + timeArray(3);
 
 % Array to store the start locations of blocks present in the trc data
 blockStartLocs = zeros(1, numBlocks);
 
 for i = 1:numBlocks
-    temp = str2num(strrep(blockStartTimesStr{i},':',' '));
+    timeArray = str2num(strrep(blockStartTimesStr{i},':',' '));
     % Convert to seconds and subtract start time (start of the trace)
-    blockStartLocs(i) = ((temp(1)*3600 + temp(2)*60 + temp(3))-startTimeInSeconds)*sampleRate;    
+    blockStartLocs(i) = ((timeArray(1)*3600 + timeArray(2)*60 + timeArray(3))-startTimeInSeconds)*sampleRate;    
 end
 
 % Reshape trc data to Blocks in the form of a 3d matrix: dimensions of electrode (178), time (samples), and blocks
