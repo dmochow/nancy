@@ -1,10 +1,12 @@
 clear all; close all; clc
 addpath(genpath('../../COMMON'));
 
-dataFromDisk=1;
-trcFilename='../data/BRA_AL/micromed/EEG_2012.TRC';
-xlsFilename='../data/BRA_AL/shit from Laurent/BRA_AL_Electrodes.xls';
-precomputedFilename='../precomputed/BRA_AL/intracerebral_voltages_during_6Hz_scalp_stim';
+dataFromDisk=0;
+subjStr='BOU_JO';
+trcFilename='EEG_106.TRC';
+trcFilename=['../data/' subjStr '/micromed/' trcFilename];
+%xlsFilename='../data/BRA_AL/shit from Laurent/BRA_AL_Electrodes.xls';
+precomputedFilename=['../precomputed/' subjStr '/intracerebral_voltages_during_6Hz_scalp_stim'];
 fhigh=5; % high-pass cutoff frequency
 show=1; % whether to show the results of epoching the data
 delx=3.5;  % spacing between adjacent contacts in mm
@@ -58,25 +60,6 @@ nChannelsField=size(channelTable,1);
 % finally
 E=0.001*(V(channelTable(:,1))-V(channelTable(:,2)))/(delx);  % microvolts to millivolts, then divided by mm to get mV/mm = V/m
 Em=abs(E); 
-%%
-% read the electrode locations from spreadsheet and render electric field
-[num,txt,raw]=xlsread(xlsFilename);
-xlsChannelNames=txt(:,1);
-xlsChannelNames=strrep(xlsChannelNames,' ','');
-
-for ch=1:nChannelsField
-    thisChannelName1=channelNamesNoSpace{channelTable(ch,1)};
-    ind1=find(strcmp(xlsChannelNames,thisChannelName1),1) ;
-    if ~isempty(ind1)
-        try
-            locs(ch,:)=num(ind1,2:4);
-        catch
-            locs(ch,:)=[NaN,NaN,NaN];
-        end
-    else
-        locs(ch,:)=[NaN,NaN,NaN];
-    end  
-end
 
 %%
 figure
@@ -88,34 +71,59 @@ xt = get(gca, 'XTick');
 set(gca, 'FontSize', 6)
 ylabel('Electric field magnitude (V/m)');
 
-save('../precomputed/empiricalElectricField','Em','E','channelNames','channelTable');
+
 
 %%
+% % read the electrode locations from spreadsheet and render electric field
+% [num,txt,raw]=xlsread(xlsFilename);
+% xlsChannelNames=txt(:,1);
+% xlsChannelNames=strrep(xlsChannelNames,' ','');
+% 
+% for ch=1:nChannelsField
+%     thisChannelName1=channelNamesNoSpace{channelTable(ch,1)};
+%     ind1=find(strcmp(xlsChannelNames,thisChannelName1),1) ;
+%     if ~isempty(ind1)
+%         try
+%             locs(ch,:)=num(ind1,2:4);
+%         catch
+%             locs(ch,:)=[NaN,NaN,NaN];
+%         end
+%     else
+%         locs(ch,:)=[NaN,NaN,NaN];
+%     end  
+% end
+% 
+% %%
 
-indMissing=isnan(mean(locs,2));
-Em_missingLocs=Em;
-Em_missingLocs(indMissing)=0;
-
-figure
-S=60;
-scatter3(locs(:,1),locs(:,2),locs(:,3),S,Em_missingLocs,'filled'); hold on
-cm=jmaColors('usa');
-colormap(cm);
-%scatter3(plotlocs(indxTargets(t),1),plotlocs(indxTargets(t),2),plotlocs(indxTargets(t),3),2*S,E(indxTargets(t)),'filled','d');
-%title(strTargets{t});
-%caxis([min(E) max(E)]);
-%colormap(cm);
-%colorbar
-%axis equal
-%axis off
-
-%%
-% for correlating with the changes during cognitive task, reshape E into
-% full channel set (153)
-
-Em_full=NaN(nChannels,1);
-Em_full(channelTable(:,1))=Em;
-
-E_full=NaN(nChannels,1);
-E_full(channelTable(:,1))=E;
-save('../precomputed/BRA_AL_Em_full','Em_full','E_full');
+% 
+% save('../precomputed/empiricalElectricField','Em','E','channelNames','channelTable');
+% 
+% %%
+% 
+% indMissing=isnan(mean(locs,2));
+% Em_missingLocs=Em;
+% Em_missingLocs(indMissing)=0;
+% 
+% figure
+% S=60;
+% scatter3(locs(:,1),locs(:,2),locs(:,3),S,Em_missingLocs,'filled'); hold on
+% cm=jmaColors('usa');
+% colormap(cm);
+% %scatter3(plotlocs(indxTargets(t),1),plotlocs(indxTargets(t),2),plotlocs(indxTargets(t),3),2*S,E(indxTargets(t)),'filled','d');
+% %title(strTargets{t});
+% %caxis([min(E) max(E)]);
+% %colormap(cm);
+% %colorbar
+% %axis equal
+% %axis off
+% 
+% %%
+% % for correlating with the changes during cognitive task, reshape E into
+% % full channel set (153)
+% 
+% Em_full=NaN(nChannels,1);
+% Em_full(channelTable(:,1))=Em;
+% 
+% E_full=NaN(nChannels,1);
+% E_full(channelTable(:,1))=E;
+% save('../precomputed/BRA_AL_Em_full','Em_full','E_full');
